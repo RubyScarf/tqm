@@ -1,0 +1,140 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body, html {
+  width:100%; height:100%;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  min-height: 200vh; /* scrollable map */
+  background: linear-gradient(to bottom, #0b0c2b, #2e2f58);
+  color: white;
+  overflow-x: hidden;
+}
+
+canvas#stars {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+
+.title {
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+  z-index: 1;
+  position: relative;
+}
+
+#next-drop-timer {
+  text-align: center;
+  font-size: 1.2em;
+  color: #ffccd5;
+  text-shadow: 0 0 5px #ff77cc;
+  margin-bottom: 20px;
+}
+
+/* Path container */
+.path-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.node {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 80px auto;
+  background: #444;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* heart lobes */
+.node::before,
+.node::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.node::before {
+  top: -25px;
+  left: 0;
+}
+
+.node::after {
+  left: 25px;
+  top: 0;
+}
+
+/* number */
+.node span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  z-index: 2;
+}
+
+/* locked */
+.node.locked {
+  background: #555;
+}
+
+/* unlocked */
+.node.unlocked {
+  background: #ff77cc;
+  box-shadow: 0 0 20px #ff77cc;
+  animation: heartbeat 2s infinite;
+}
+
+.node.unlocked::before,
+.node.unlocked::after {
+  box-shadow: 0 0 20px #ff77cc;
+}
+
+/* heartbeat */
+@keyframes heartbeat {
+  0%, 100% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.1); }
+}
+
+.back-btn {
+  position: fixed;     /* sticks it */
+  bottom: 20px;        /* 20px from bottom of screen */
+  left: 50%;           /* center horizontally */
+  transform: translateX(-50%);
+  padding: 12px 25px;
+  background: #ff77cc; /* pink for notes, blue for gifts */
+  color: #0b0c2b;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;         /* stays above everything */
+}
+
+.back-btn:hover {
+  background: #ff55aa; /* brighter on hover */
+}
+
