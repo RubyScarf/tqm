@@ -16,6 +16,10 @@ body {
 .note-content {
   font-size: 1.2em;
   line-height: 1.6em;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 .ps-note-content {
