@@ -52,3 +52,12 @@ body {
   opacity: 0.7;
   pointer-events: none;
 }
+
+chapter-video {
+  display: block;
+  margin: 40px auto;
+  max-width: 100%;
+  border: 3px solid #ff77cc;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ff77cc;
+}
