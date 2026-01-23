@@ -1,0 +1,54 @@
+body {
+  background: linear-gradient(to bottom, #0b0c2b, #1d1e3b);
+  color: #ffe0f0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  padding: 50px 20px;
+}
+
+.note-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ff77cc;
+}
+
+.note-content {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+.ps-note-content {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #ffd6eb;
+  text-shadow: 0 0 6px #ff77cc;
+  margin-bottom: 80px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+  background: #ff77cc;
+  color: #0b0c2b;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #ff55aa;
+}
+
+#ps {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  pointer-events: none;
+}
