@@ -5,6 +5,8 @@ body {
   text-align: center;
   min-height: 100vh;
   padding: 50px 20px;
+  margin: 0;
+  overflow: hidden;
 }
 
 .note-title {
@@ -40,6 +42,8 @@ body {
   border-radius: 25px;
   font-weight: bold;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .back-btn:hover {
@@ -57,11 +61,24 @@ body {
   pointer-events: none;
 }
 
-chapter-video {
-  display: block;
-  margin: 40px auto;
-  max-width: 100%;
-  border: 3px solid #ff77cc;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #ff77cc;
+/* Container covers entire screen */
+.media-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* behind everything */
+  overflow: hidden;
+}
+
+/* VIDEO FITS SCREEN */
+.chapter-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* crops instead of stretching */
 }
