@@ -81,4 +81,6 @@ body {
   min-height: 100%;
   transform: translate(-50%, -50%);
   object-fit: cover; /* crops instead of stretching */
+  width: auto;
+  height: fit-content;
 }
