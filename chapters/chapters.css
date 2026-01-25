@@ -69,16 +69,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw; /* Scale video to 90% of the viewport width */
+  width: calc(100vw - 10px); /* Subtract 10px to prevent overflow */
   height: auto; /* Maintain aspect ratio */
   max-width: 100%;
   max-height: 90vh; /* Ensure it doesn't exceed 90% of the viewport height */
   object-fit: contain;
+  box-sizing: border-box; /* Include padding and borders in the element's width/height */
 }
 
 @media (max-width: 600px) {
   .chapter-video {
-    width: 100vw; /* Use full width for smaller screens */
+    width: calc(100vw - 10px); /* Adjust for smaller screens */
     max-height: 100vh; /* Ensure it fits within the viewport */
   }
 }
