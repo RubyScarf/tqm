@@ -72,5 +72,5 @@ body {
   transform: translate(-50%, -50%);
   width: auto;
   height: 100vh;
-  object-fit: fill;
+  object-fit: contain;
 }
