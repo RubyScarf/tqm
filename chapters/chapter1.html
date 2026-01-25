@@ -10,6 +10,10 @@
 </head>
 <body>
 
+<audio id="bgMusic" autoplay loop>
+  <source src="../assets/audio/chapter1.mp3" type="audio/mp3">
+</audio>
+
 <h1 class="note-title">Note #1</h1>
 
 <p class="note-content">
@@ -24,6 +28,30 @@
 </div>
 
 <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+
+<script>
+const audio = document.getElementById("bgMusic");
+audio.volume = 0;
+
+function startAudio() {
+  audio.play().catch(() => {});
+  let vol = 0;
+  const fade = setInterval(() => {
+    if (vol < 1) {
+      vol += 0.05;
+      audio.volume = vol;
+    } else {
+      clearInterval(fade);
+    }
+  }, 200);
+
+  document.removeEventListener("click", startAudio);
+  document.removeEventListener("touchstart", startAudio);
+}
+
+document.addEventListener("click", startAudio);
+document.addEventListener("touchstart", startAudio);
+</script>
 
 </body>
 </html>
