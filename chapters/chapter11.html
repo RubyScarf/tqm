@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drop 11</title>
-<link rel="stylesheet" href="../style.css">
-<link rel="icon" type="image/png" href="../assets/book.png"> 
-<link rel="stylesheet" href="../chapters/chapters.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop 11</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../assets/book.png"> 
+  <link rel="stylesheet" href="../chapters/chapters.css">
 </head>
-<body>
+  <audio id="bgMusic" loop>
+    <source src="../assets/audio/audio.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
   <h1 class="note-title">Heart Pod #11</h1>
 
-<p class="note-content">
-There’s something really special about feeling safe with someone.
-With you, I don’t feel like I have to pretend or perform.
-I can just… be. And you still choose me.
-</p>
-<div id="ps">
-  <p class="ps-note-content">
-    P.S. I began to feel safe being myself.
+  <p class="note-content">
+    There’s something really special about feeling safe with someone.
+    With you, I don’t feel like I have to pretend or perform.
+    I can just… be. And you still choose me.
   </p>
-</div>
-<a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
 
+  <div id="ps">
+    <p class="ps-note-content">
+      P.S. I began to feel safe being myself.
+    </p>
+  </div>
+
+  <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const bgMusic = document.getElementById("bgMusic");
+      bgMusic.volume = 0.5; // Adjust volume if needed
+      bgMusic.play();
+    });
+  </script>
 </body>
 </html>

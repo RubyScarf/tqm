@@ -9,20 +9,33 @@
 <link rel="stylesheet" href="../chapters/chapters.css">
 </head>
 <body>
+  <audio id="bgMusic" loop>
+    <source src="../assets/audio/audio.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
   <h1 class="note-title">Heart Pod #9</h1>
 
-<p class="note-content">
-You know what I’ve realized?
-I like who I am when I’m with you.
-I feel lighter, more open, more myself — and that’s because of how safe you make me feel.
-</p>
-<div id="ps">
-  <p class="ps-note-content">
-    P.S. So did hope.
+  <p class="note-content">
+    You know what I’ve realized?
+    I like who I am when I’m with you.
+    I feel lighter, more open, more myself — and that’s because of how safe you make me feel.
   </p>
-</div>
-<a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
 
+  <div id="ps">
+    <p class="ps-note-content">
+      P.S. So did hope.
+    </p>
+  </div>
+
+  <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const bgMusic = document.getElementById("bgMusic");
+      bgMusic.volume = 0.5; // Adjust volume if needed
+      bgMusic.play();
+    });
+  </script>
 </body>
 </html>

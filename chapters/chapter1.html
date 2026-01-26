@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drop 1</title>
-<link rel="stylesheet" href="../style.css">
-<link rel="icon" type="image/png" href="../assets/book.png"> 
-<link rel="stylesheet" href="../chapters/chapters.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop 1</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../assets/book.png"> 
+  <link rel="stylesheet" href="../chapters/chapters.css">
 </head>
 <body>
+  <audio id="bgMusic" loop>
+    <source src="../assets/audio/ENHYPEN_Echoes_Instrumental.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 
-<audio id="bgMusic" loop>
-  <source src="../assets/audio/ENHYPEN_Echoes_Instrumental.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-  
-</audio>
+  <h1 class="note-title">Heart Pod #1</h1>
 
-<h1 class="note-title">Heart Pod #1</h1>
-
-<p class="note-content">
-
-
-
-</p>
-<div id="ps">
-  <p class="ps-note-content">
-    P.S. Once, something gentle found its way into my life.
+  <p class="note-content">
+    Hey Beautiful, <br>
+    When I asked if you wanted to be my <em>Valentines</em>, I didn't think it would lead to all this. 
+    I didn't really have a plan at all for what I was gonna do. I tend to go a <em>little</em> overboard 
+    when it comes to things like this. I guess I just wanted to show you how much you mean to me. I hope 
+    this little adventure makes you smile :ɔ 
   </p>
-</div>
 
-<a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const bgMusic = document.getElementById("bgMusic");
-    bgMusic.volume = 0.5; // Adjust volume if needed
-    bgMusic.play();
-  });
-</script>
+  <div id="ps">
+    <p class="ps-note-content">
+      P.S. Once, something gentle found its way into my life.
+    </p>
+  </div>
+
+  <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const bgMusic = document.getElementById("bgMusic");
+      bgMusic.volume = 0.5; // Adjust volume if needed
+      bgMusic.play();
+    });
+  </script>
 </body>
 </html>
