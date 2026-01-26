@@ -11,7 +11,7 @@
 <body>
 
 <audio id="bgMusic" loop>
-  <source src="../assets/audio/ENHYPEN  Echoes  Instrumental.mp3" type="audio/mp3">
+  <source src="../assets/audio/ENHYPEN_Echoes_Instrumental.mp3" type="audio/mp3">
   Your browser does not support the audio element.
 </audio>
 
@@ -29,30 +29,6 @@
 </div>
 
 <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
-
-<script>
-const audio = document.getElementById("bgMusic");
-audio.volume = 0;
-
-function startAudio() {
-  audio.play().catch(() => {});
-  let vol = 0;
-  const fade = setInterval(() => {
-    if (vol < 1) {
-      vol += 0.05;
-      audio.volume = vol;
-    } else {
-      clearInterval(fade);
-    }
-  }, 200);
-
-  document.removeEventListener("click", startAudio);
-  document.removeEventListener("touchstart", startAudio);
-}
-document.addEventListener("click", startAudio, { once: true });
-document.addEventListener("touchstart", startAudio, { once: true });
-document.addEventListener("touchstart", startAudio);
-</script>
 
 </body>
 </html>
