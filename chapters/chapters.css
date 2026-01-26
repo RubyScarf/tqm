@@ -24,6 +24,7 @@ body {
   border-radius: 15px;
   margin: 20px auto;
   max-width: 800px;
+  flex: 1;
 }
 
 .ps-note-content {
@@ -32,6 +33,11 @@ body {
   color: #ffd6eb;
   text-shadow: 0 0 6px #ff77cc;
   margin-bottom: 80px;
+}
+
+.bottom-section {
+  margin-top: auto;
+  padding: 40px 20px 30px;
 }
 
 .back-btn {
@@ -50,16 +56,7 @@ body {
   background: #ff55aa;
 }
 
-#ps {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  pointer-events: none;
-}
+
 
 .media-container {
   position: relative;
