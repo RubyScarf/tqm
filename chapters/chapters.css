@@ -5,6 +5,10 @@ body {
   text-align: center;
   min-height: 100vh;
   padding: 50px 20px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .note-title {
@@ -62,6 +66,7 @@ body {
   width: auto;
   height: 100vh;
   overflow: hidden;
+  flex: 1;
 }
 
 .chapter-video {
