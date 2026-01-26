@@ -10,8 +10,9 @@
 </head>
 <body>
 
-<audio id="bgMusic" autoplay loop>
-  <source src="../assets/audio/echoes.mp3" type="audio/mp3">
+<audio id="bgMusic" loop>
+  <source src="../assets/audio/ENHYPEN  Echoes  Instrumental.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
 </audio>
 
 <h1 class="note-title">Heart Pod #1</h1>
@@ -48,8 +49,8 @@ function startAudio() {
   document.removeEventListener("click", startAudio);
   document.removeEventListener("touchstart", startAudio);
 }
-
-document.addEventListener("click", startAudio);
+document.addEventListener("click", startAudio, { once: true });
+document.addEventListener("touchstart", startAudio, { once: true });
 document.addEventListener("touchstart", startAudio);
 </script>
 
