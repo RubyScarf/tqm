@@ -1,12 +1,3 @@
-
-* {
-    box-sizing: border-box;
-  }
-
-button, .tile {
-    touch-action: manipulation;
-}
-  
 .correct {
     background-color: #6aaa64;
     color: white;
