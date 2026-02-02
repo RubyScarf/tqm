@@ -21,3 +21,25 @@
     border-radius: 4px;
     font-weight: bold;
 }
+
+
+#simon-game {
+    display: flex;
+    flex-direction: column; /* Stack the child elements vertically */
+    align-items: center; /* Center align the content horizontally */
+    gap: 20px; /* Add spacing between the modules */
+  }
+  
+  .wrapper {
+    width: 100%; /* Ensure the game board takes full width */
+    text-align: center; /* Center the content inside */
+  }
+  
+  .game-controls {
+    width: 100%; /* Ensure the controls take full width */
+    text-align: center; /* Center the content inside */
+  }
+  
+  .game-options {
+    margin-top: 20px; /* Add spacing above the game options */
+  }
