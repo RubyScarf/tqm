@@ -85,3 +85,40 @@ body {
     max-height: 100vh; /* Ensure it fits within the viewport */
   }
 }
+
+/* Card layout */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* The frame */
+.card {
+    width: 220px;
+    height: 220px;              /* same height for all */
+    display: flex;
+    align-items: center;        /* vertical center */
+    justify-content: center;    /* horizontal center */
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;           /* hides extra image edges */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+}
+
+/* The actual image */
+.card img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;  /* keeps whole image visible */
+    display: block;
+}
