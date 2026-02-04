@@ -7,10 +7,114 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/book.png"> 
     <link rel="stylesheet" href="../chapters/chapters.css">
-</head>
-<body>
+    <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    }
+    
+    .container {
+      text-align: center;
+    }
+    
+    #wheel {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 8px solid white;
+      margin: 20px auto;
+      position: relative;
+      transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+      background: conic-gradient(
+        #ff7675 0% 16.6%,
+        #74b9ff 16.6% 33.2%,
+        #ffeaa7 33.2% 49.8%,
+        #55efc4 49.8% 66.4%,
+        #fd79a8 66.4% 83%,
+        #a29bfe 83% 100%
+      );
+    }
+    
+    .pointer {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid #2d3436;
+      margin: 0 auto;
+    }
+    
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 10px;
+      background: #6c5ce7;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    
+    button:hover { background: #5a4bd1; }
+    
+    #result {
+      margin-top: 15px;
+      font-size: 16px;
+      min-height: 24px;
+    }
+    </style>
+    </head>
+    <body>
+    
+        <h1 class="note-title">Heart Pod #6</h1>    
+    
+    <div class="container">
+      <h2>🎡 Spin The Mood</h2>
+      <div class="pointer"></div>
+      <div id="wheel"></div>
+      <button onclick="spinWheel()">Spin</button>
+      <div id="result"></div>
+    </div>
+    
+    <script>
+    const actions = [
+      "Drink some water 💧",
+      "Stretch for 30 seconds 🙆‍♀️",
+      "Listen to 1 comfort song 🎧",
+      "Look out a window for a minute 🌤",
+      "Take 5 slow breaths 🌬",
+      "Smile for no reason 🙂"
+    ];
+    
+    let spinning = false;
+    let currentRotation = 0;
+    
+    function spinWheel() {
+      if (spinning) return;
+      spinning = true;
+    
+      const wheel = document.getElementById("wheel");
+      const result = document.getElementById("result");
+    
+      const randomIndex = Math.floor(Math.random() * actions.length);
+      const degreesPerSlice = 360 / actions.length;
+      const extraSpins = 360 * 5;
+      const finalDeg = extraSpins + (360 - randomIndex * degreesPerSlice);
+    
+      currentRotation += finalDeg;
+      wheel.style.transform = `rotate(${currentRotation}deg)`;
+    
+      setTimeout(() => {
+        result.textContent = actions[randomIndex];
+        spinning = false;
+      }, 4000);
+    }
+    </script>    
 
-    <h1 class="note-title">Heart Pod #6</h1>
 
     <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
     
