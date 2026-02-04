@@ -7,10 +7,163 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/book.png"> 
     <link rel="stylesheet" href="../chapters/chapters.css">
-</head>
-<body>
-    <h1 class="note-title">Heart Pod #14</h1>
-    
+    <style>
+        body {
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Georgia", serif;
+          background: linear-gradient(135deg, #f6d365, #fda085);
+        }
+        
+        .book {
+          background: #fffaf0;
+          width: 92%;
+          max-width: 450px;
+          padding: 30px;
+          border-radius: 20px;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+          text-align: center;
+          position: relative;
+        }
+        
+        h2 {
+          margin-bottom: 10px;
+        }
+        
+        button {
+          margin: 8px;
+          padding: 10px 14px;
+          border-radius: 10px;
+          border: none;
+          background: #ff7675;
+          color: white;
+          cursor: pointer;
+          font-size: 14px;
+        }
+        
+        button:hover { background: #e84393; }
+        
+        #story {
+          margin-top: 20px;
+          text-align: left;
+          line-height: 1.6;
+          animation: fadeIn 1.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        .music-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: #6c5ce7;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <div class="book">
+          <button class="music-btn" onclick="toggleMusic()">🎵</button>
+          <h2 id="question">Before we start… pick a name</h2>
+          <div id="choices"></div>
+          <div id="story"></div>
+        </div>
+        
+        <audio id="bgMusic" loop>
+          <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9bce19.mp3" type="audio/mpeg">
+        </audio>
+        
+        <script>
+        const questions = [
+          { q: "Pick a color", options: ["Pink", "Blue", "Golden", "Lavender"] },
+          { q: "Pick a place", options: ["a quiet beach", "a glowing city", "a forest trail", "a cozy room"] },
+          { q: "Pick an animal", options: ["cat", "fox", "butterfly", "dog"] },
+          { q: "Pick a vibe", options: ["peaceful", "chaotic", "dreamy", "adventurous"] },
+          { q: "Pick a time of day", options: ["sunset", "midnight", "early morning", "rainy afternoon"] }
+        ];
+        
+        let answers = [];
+        let step = -1;
+        let playerName = "";
+        
+        const questionEl = document.getElementById("question");
+        const choicesEl = document.getElementById("choices");
+        const storyEl = document.getElementById("story");
+        const music = document.getElementById("bgMusic");
+        
+        function toggleMusic() {
+          music.paused ? music.play() : music.pause();
+        }
+        
+        function showQuestion() {
+          choicesEl.innerHTML = "";
+          const current = questions[step];
+          questionEl.textContent = current.q;
+        
+          current.options.forEach(option => {
+            const btn = document.createElement("button");
+            btn.textContent = option;
+            btn.onclick = () => choose(option);
+            choicesEl.appendChild(btn);
+          });
+        }
+        
+        function choose(option) {
+          answers.push(option);
+          step++;
+          if (step < questions.length) {
+            showQuestion();
+          } else {
+            revealStory();
+          }
+        }
+        
+        function revealStory() {
+          questionEl.textContent = "✨ You made a story";
+          choicesEl.innerHTML = "";
+        
+          const endings = [
+            `Nothing huge happened, but ${playerName || "someone"} left that moment softer than before.`,
+            `It became one of those memories people don’t forget, even years later.`,
+            `The world didn’t change — but something inside did.`,
+          ];
+        
+          const randomEnding = endings[Math.floor(Math.random() * endings.length)];
+        
+          storyEl.innerHTML = `
+          One ${answers[4]}, ${playerName || "someone"} with ${answers[0]} energy found themselves in ${answers[1]}.
+          A small ${answers[2]} appeared, carrying a ${answers[3]} feeling in the air.
+          The moment felt quiet, like the world had slowed down just enough to breathe.
+          ${randomEnding}
+          `;
+        }
+        
+        // First input = name
+        const nameInput = document.createElement("input");
+        nameInput.placeholder = "Type a name (or leave blank)";
+        nameInput.style.padding = "8px";
+        nameInput.style.margin = "10px";
+        nameInput.style.borderRadius = "8px";
+        nameInput.style.border = "1px solid #ccc";
+        
+        const startBtn = document.createElement("button");
+        startBtn.textContent = "Start";
+        startBtn.onclick = () => {
+          playerName = nameInput.value.trim();
+          step = 0;
+          showQuestion();
+        };
+        
+        choicesEl.appendChild(nameInput);
+        choicesEl.appendChild(startBtn);
+        </script>
+
     <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
 </body>
 </html>
