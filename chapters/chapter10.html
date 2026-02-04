@@ -10,7 +10,7 @@
     <style>
         body {
           font-family: Arial, sans-serif;
-          background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+          background: linear-gradient(135deg, #4e5880, #c4edfa);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -38,14 +38,14 @@
           padding: 10px 15px;
           border: none;
           border-radius: 10px;
-          background: #ff6b81;
+          background: #6b81ff;
           color: white;
           cursor: pointer;
           font-size: 14px;
         }
       
         button:hover {
-          background: #ff4757;
+          background: #47fff0;
         }
       
         .small {
@@ -53,71 +53,80 @@
           margin-top: 10px;
           color: #666;
         }
+        .lock1 {
+          font-size: 11px;
+          color: #aaa;
+        }
       </style>
 </head>
 <body>
-   <div id="screen1" class="screen active">
-     <h2>🔒 Valentine Vault</h2>
-     <p>3 locks stand between you and the reward…</p>
-     <button onclick="nextScreen(2)">Start</button>
-   </div>
+    <div id="screen1" class="screen active">
+        <h2>🔒 Valentine Vault</h2>
+        <p>3 locks stand between you and the reward…</p>
+        <button onclick="nextScreen(2)">Start</button>
+    </div>
    
-   <div id="screen2" class="screen">
-     <h2>Lock 1</h2>
-     <p>What color do I associate with you?</p>
-     <button onclick="wrong()">Blue</button>
-     <button onclick="correct(3)">Soft Pink</button>
-     <button onclick="wrong()">Green</button>
-     <p class="small" id="msg2"></p>
-   </div>
+    <div id="screen2" class="screen">
+        <h2>Lock 1</h2>
+        <p>What color do I associate with you?</p>
+            <button onclick="wrong()">Red</button> 
+            <button onclick="wrong()">Yellow</button>
+            <button onclick="wrong()">Green</button>
+            <button onclick="correct(3)">Blue</button>
+            <button onclick="wrong()">Pink</button>
+        <p class="small" id="msg2"></p>
+    </div>
    
-   <div id="screen3" class="screen">
-     <h2>Lock 2</h2>
-     <p>Which one is MOST you?</p>
-     <button onclick="wrong()">Chaos gremlin</button>
-     <button onclick="correct(4)">Calm sunshine</button>
-     <button onclick="wrong()">Mysterious villain</button>
-     <button onclick="wrong()">Sleepy potato</button>
-     <p class="small" id="msg3"></p>
-   </div>
+    <div id="screen3" class="screen">
+        <h2>Lock 2</h2>
+        <p class="lock1">was it that obvious?</p>
+        <p>Which one is MOST you?</p>
+            <button onclick="wrong()">Chaos gremlin</button>
+            <button onclick="correct(4)">Fucking Awesome</button>
+            <button onclick="wrong()">Calm sunshine</button> 
+            <button onclick="wrong()">Mysterious villain</button>
+            <button onclick="wrong()">Sleepy potato</button>
+        <p class="small" id="msg3"></p>
+    </div>
    
-   <div id="screen4" class="screen">
-     <h2>Lock 3</h2>
-     <p>Pick a number… trust the process.</p>
-     <button onclick="correct(5)">3</button>
-     <button onclick="wrong()">7</button>
-     <button onclick="wrong()">9</button>
-     <p class="small" id="msg4"></p>
-   </div>
+    <div id="screen4" class="screen">
+        <h2>Lock 3</h2>
+        <p>Pick a number… trust the process...</p>
+            <button onclick="correct(5)">9</button>
+            <button onclick="wrong()">7</button>
+            <button onclick="wrong()">5</button>
+            <button onclick="wrong()">3</button>
+        <p class="small" id="msg4"></p>
+    </div>
    
-   <div id="screen5" class="screen">
-     <h2>🎉 Vault Opened!</h2>
-     <p>Reward unlocked:</p>
-     <h3>You are officially cool.</h3>
-     <p class="small">This message is legally binding.</p>
-   </div>
+    <div id="screen5" class="screen">
+        <h2>🎉 Vault Opened!</h2>
+        <p>Reward unlocked:</p>
+        <h3>You are officially cool.</h3>
+        <p class="small">This message is legally binding.</p>
+    </div>
    
-   <script>
-   function nextScreen(n) {
-     document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-     document.getElementById("screen" + n).classList.add("active");
-   }
+    <script>
+        function nextScreen(n) {
+            document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+            document.getElementById("screen" + n).classList.add("active");
+        }
    
-   function correct(next) {
-     nextScreen(next);
-   }
+    function correct(next) {
+        nextScreen(next);
+    }
    
-   function wrong() {
-     const msgs = [
-       "Nope 👀 try again",
-       "That didn’t work…",
-       "The vault says no",
-       "Almost… but not quite"
-     ];
-     const current = document.querySelector(".screen.active .small");
-     current.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-   }
-   </script>
+    function wrong() {
+        const msgs = [
+            "Nope 👀 try again",
+            "That didn’t work…",
+            "The vault says no",
+            "Almost… but not quite"
+        ];
+        const current = document.querySelector(".screen.active .small");
+        current.textContent = msgs[Math.floor(Math.random() * msgs.length)];
+    }
+    </script>
    
     <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
 </body>
