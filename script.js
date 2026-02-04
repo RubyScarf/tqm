@@ -1,10 +1,7 @@
 // ====== CONFIG ======
 const totalNodes = 20;
-// Feb 3, 2026 at 00:00 in GMT+9
 const startTime = new Date(Date.UTC(2026, 1, 2, 15, 0, 0));
-
-let unlockedCount = Math.floor(elapsed / unlockInterval);
-if (elapsed >= 0) unlockedCount += 1;
+const unlockInterval = 2 * 60 * 60 * 1000; // 2 hours in ms
 
 // Placeholder links for chapter pages
 const chapterLinks = Array.from({length: totalNodes}, (_, i) => `chapters/chapter${i+1}.html`);
