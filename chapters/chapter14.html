@@ -68,19 +68,13 @@
             background: #6c5ce7;
         }
         </style>
-        </head>
-        <body>
-        
+    </head>
+    <body> 
         <div class="book">
-          <button class="music-btn" onclick="toggleMusic()">🎵</button>
           <h2 id="question">Pick a name</h2>
           <div id="choices"></div>
           <div id="story"></div>
         </div>
-        
-        <audio id="bgMusic" loop>
-          <source src="../assets/audio/KYOTO,mp3" type="audio/mpeg">
-        </audio>
         
         <script>
         const questions = [
@@ -100,9 +94,7 @@
         const storyEl = document.getElementById("story");
         const music = document.getElementById("bgMusic");
         
-        function toggleMusic() {
-          music.paused ? music.play() : music.pause();
-        }
+       
         
         function showQuestion() {
           choicesEl.innerHTML = "";
@@ -168,7 +160,7 @@
         </script>
 
     <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
           const bgMusic = document.getElementById("bgMusic");
