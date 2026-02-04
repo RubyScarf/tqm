@@ -1,6 +1,6 @@
 // ====== CONFIG ======
 const totalNodes = 20;
-const startTime = new Date("2026-02-4T00:00:00"); // Valentine’s local time
+const startTime = new Date("2026-02-04T00:00:00"); // Valentine’s local time
 const unlockInterval = 2 * 60 * 60 * 1000; // 2 hours in ms
 
 // Placeholder links for chapter pages
