@@ -10,7 +10,7 @@
     <style>
         body {
           font-family: Arial, sans-serif;
-          background: linear-gradient(135deg, #4e5880, #c4edfa);
+          background: linear-gradient(135deg, #4e5880, #c4edfa), #4e5880; 
           display: flex;
           justify-content: center;
           align-items: center;
@@ -72,9 +72,9 @@
         <p>What color do I associate with you?</p>
         <p class="lock1">¿is it that obvious?</p>
             <button onclick="wrong()">Red</button> 
-            <button onclick="wrong()">Yellow</button>
+            <button onclick="wrong()">Yellow</button> <br>
             <button onclick="wrong()">Green</button>
-            <button onclick="correct(3)">Blue</button>
+            <button onclick="correct(3)">Blue</button> <br>
             <button onclick="wrong()">Pink</button>
         <p class="small" id="msg2"></p>
     </div>
@@ -96,7 +96,7 @@
         <p>Pick a number… trust the process...</p>
         <p class="lock1">¿what could it possibly be?</p>
             <button onclick="correct(5)">9</button>
-            <button onclick="wrong()">7</button>
+            <button onclick="wrong()">7</button> <br>
             <button onclick="wrong()">5</button>
             <button onclick="wrong()">3</button>
         <p class="small" id="msg4"></p>
@@ -105,7 +105,7 @@
     <div id="screen5" class="screen">
         <h2>🎉 Vault Opened!</h2>
         <h3>Reward unlocked: </p>
-        <h3>You are officially SWAG 😎.</h3>
+        <h3>You are officially <em><strong>SWAG</strong></em> 😎.</h3>
         <p class="small">This message is legally binding., btw</p>
     </div>
    

@@ -70,6 +70,7 @@
         </style>
     </head>
     <body> 
+        <h1 class="note-title">Heart Pod #14</h1>
         <div class="book">
           <h2 id="question">Pick a name</h2>
           <div id="choices"></div>
@@ -78,7 +79,7 @@
         
         <script>
         const questions = [
-          { q: "Pick a color", options: ["Pink", "Blue", "Golden", "Lavender"] },
+          { q: "Pick a color", options: ["Amber", "Blue", "Golden", "Lavender"] },
           { q: "Pick a place", options: ["a quiet beach", "a glowing city", "a forest trail", "a cozy room"] },
           { q: "Pick an animal", options: ["cat", "fox", "butterfly", "dog"] },
           { q: "Pick a vibe", options: ["peaceful", "chaotic", "dreamy", "adventurous"] },
@@ -141,7 +142,7 @@
         
         // First input = name
         const nameInput = document.createElement("input");
-        nameInput.placeholder = "Type a name (or leave blank)";
+        nameInput.placeholder = "Type a name";
         nameInput.style.padding = "8px";
         nameInput.style.margin = "10px";
         nameInput.style.borderRadius = "8px";
