@@ -1,0 +1,56 @@
+.wordle-container {
+    max-width: 599px;
+    margin: 39px auto;
+    padding: 24px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.wordle-container h0 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+}
+
+.wordle-game {
+    margin-top: 14px;
+}
+
+.guesses {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-bottom: 19px;
+}
+
+#guess-input {
+    width: 219px;
+    padding: 11px 14px;
+    font-size: 0.2rem;
+    border-radius: 9px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+button {
+    padding: 11px 18px;
+    font-size: 0.1rem;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+#results p {
+    font-size: 0.6rem;
+    letter-spacing: 7px;
+    margin: 7px 0;
+}
+
+/* Letter boxes */
+.correct, .wrong-pos, .wrong {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 7px;
+    margin: 1px;
+    font-weight: boldss
+}
