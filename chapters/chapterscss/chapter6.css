@@ -6,7 +6,7 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #032c0c, #57606f);
-    background-image: url('/assets/zenbg.png');
+    background-image: url('./assets/zenbg.png');
     background-color: rgba(0, 0, 0, 0.4); /* black tint, adjust opacity */
     backdrop-filter: blur(5px); /* blur the background image */
     z-index: -1; /* behind content */
