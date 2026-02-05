@@ -1,0 +1,59 @@
+body {
+    color: #333; 
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Georgia", serif;
+    background: linear-gradient(135deg, #0b0742, #120c6e, #5e72eb, #ff9190, #fdc094);
+}
+
+.book {
+    background: #fffaf0;
+    width: 92%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+     margin-bottom: 10px;
+}
+
+button {
+    margin: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #ff7675;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover { 
+    background: #e84393; 
+}
+
+#story {
+    margin-top: 20px;
+    text-align: left;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.music-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #6c5ce7;
+}
