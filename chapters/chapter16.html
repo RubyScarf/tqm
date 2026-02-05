@@ -7,10 +7,41 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/book.png"> 
     <link rel="stylesheet" href="../chapters/chapters.css">
+    <link rel="stylesheet" href="../chapters/chapterscss/chapter16.css">
 </head>
 <body>
     <h1 class="note-title">Heart Pod #16</h1>
 
+    <div class="future-container">
+        <div class="future" onclick="reveal(this, 0)">🌅</div>
+        <div class="future" onclick="reveal(this, 1)">🌟</div>
+        <div class="future" onclick="reveal(this, 2)">💌</div>
+        <div class="future" onclick="reveal(this, 3)">🎞️</div>
+    </div>
+      
+    <div id="messageBox" class="message hidden"></div>
+      
+    <script src="pod16.js"></script>
+
     <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+
+    <script>
+        const messages = [
+            "A day where everything feels quiet inside. No pressure. Just peace.",
+            "A moment where you look at yourself and think, 'I did that.'",
+            "Unexpected good news that changes your whole week.",
+            "A memory you’ll laugh about months later and still smile."
+            ];
+
+        function reveal(element, index) {
+            const box = document.getElementById("messageBox");
+            box.textContent = messages[index];
+            box.classList.remove("hidden");
+
+            // glow + disable orb
+            element.style.opacity = "0.4";
+            element.style.pointerEvents = "none";
+        }
+    </script>
 </body>
 </html>
