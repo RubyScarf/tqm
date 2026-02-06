@@ -14,54 +14,54 @@
 
     <h1 class="note-title">Heart Pod #8</h1>
 
-<a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+    <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
 
-<div class="wordle-container">
-    <h1>Valentine's Wordle</h1>
-    <div class="wordle-game">
-        <div class="guesses">
-            <input type="text" id="guess-input" placeholder="Enter your guess" maxlength="5">
-            <button onclick="submitGuess()">Submit</button>
+    <div class="wordle-container">
+        <h1>Valentine's Wordle</h1>
+        <div class="wordle-game">
+            <div class="guesses">
+                <input type="text" id="guess-input" placeholder="Enter your guess" maxlength="5">
+                <button onclick="submitGuess()">Submit</button>
+            </div>
+            <div id="results"></div>
         </div>
-        <div id="results"></div>
     </div>
-</div>
 
-<script>
-const words = ['HEART', 'AMOUR', 'SMILE', 'DANCE', 'DREAM', 'YRUI9', 'BLUSH', 'RUNY5', 'LOVER', 'HAPPY', 'HONEY', 'CANDY', 'CHARM', 'SWEET', 'SLEEP', 'LIGHT', 'BLOOM', 'PETAL', 'FLUFF', 'SHORE', 'FRESH', 'GLOSS', 'LILAC', 'ROSEY']
-let targetWord = words[Math.floor(Math.random() * words.length)];
-let attempts = 0;
+    <script>
+        const words = ['HEART', 'AMOUR', 'SMILE', 'DANCE', 'DREAM', 'YRUI9', 'BLUSH', 'RUNY5', 'LOVER', 'HAPPY', 'HONEY', 'CANDY', 'CHARM', 'SWEET', 'SLEEP', 'LIGHT', 'BLOOM', 'PETAL', 'FLUFF', 'SHORE', 'FRESH', 'GLOSS', 'LILAC', 'ROSEY']
+        let targetWord = words[Math.floor(Math.random() * words.length)];
+        let attempts = 0;
 
-function submitGuess() {
-    const input = document.getElementById('guess-input');
-    const guess = input.value.toUpperCase();
-    
-    if (guess.length !== 5) {
-        alert('Please enter a 5-letter word');
-        return;
-    }
-    
-    attempts++;
-    let result = '';
-    for (let i = 0; i < 5; i++) {
-        if (guess[i] === targetWord[i]) {
-            result += `<span class="correct">${guess[i]}</span>`;
-        } else if (targetWord.includes(guess[i])) {
-            result += `<span class="wrong-pos">${guess[i]}</span>`;
-        } else {
-            result += `<span class="wrong">${guess[i]}</span>`;
+        function submitGuess() {
+            const input = document.getElementById('guess-input');
+            const guess = input.value.toUpperCase();
+            
+            if (guess.length !== 5) {
+                alert('Please enter a 5-letter word');
+                return;
+            }
+            
+            attempts++;
+            let result = '';
+            for (let i = 0; i < 5; i++) {
+                if (guess[i] === targetWord[i]) {
+                    result += `<span class="correct">${guess[i]}</span>`;
+                } else if (targetWord.includes(guess[i])) {
+                    result += `<span class="wrong-pos">${guess[i]}</span>`;
+                } else {
+                    result += `<span class="wrong">${guess[i]}</span>`;
+                }
+            }
+            
+            document.getElementById('results').innerHTML += `<p>${result}</p>`;
+            input.value = '';
+            
+            if (guess === targetWord) {
+                alert(`You won in ${attempts} attempts!`);
+            } else if (attempts >= 6) {
+                alert(`Game Over! The word was ${targetWord}`);
+            }
         }
-    }
-    
-    document.getElementById('results').innerHTML += `<p>${result}</p>`;
-    input.value = '';
-    
-    if (guess === targetWord) {
-        alert(`You won in ${attempts} attempts!`);
-    } else if (attempts >= 6) {
-        alert(`Game Over! The word was ${targetWord}`);
-    }
-}
-</script>
+    </script>
 </body>
 </html>
