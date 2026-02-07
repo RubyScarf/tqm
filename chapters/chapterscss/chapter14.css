@@ -12,6 +12,7 @@ body {
     background: #fffaf0;
     width: 92%;
     max-width: 450px;
+    padding-top: 4%;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
@@ -39,10 +40,14 @@ button:hover {
 }
 
 #story {
+    max-height: 80vh;
     margin-top: 20px;
     text-align: left;
     line-height: 1.6;
     animation: fadeIn 1.5s ease forwards;
+    overflow-y: auto;
+    padding: 20px;
+
 }
 
 @keyframes fadeIn {
