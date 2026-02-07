@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4e5880, #c4edfa, #4e5880); 
+    background: linear-gradient(135deg, #6b81ff, #c4edfa, #4e5880); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,13 +10,14 @@ body {
 
   .screen {
     display: none;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 20px;
     width: 90%;
     max-width: 400px;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    color: #4e5880;
   }
 
   .screen.active { display: block; }
@@ -28,14 +29,14 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
-    background: #6b81ff;
+    background: #4e5880;
     color: white;
     cursor: pointer;
     font-size: 14px;
   }
 
   button:hover {
-    background: #47fff0;
+    background: #242b36;
   }
 
   .small {
