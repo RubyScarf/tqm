@@ -62,3 +62,7 @@ button:hover {
     right: 10px;
     background: #6c5ce7;
 }
+
+.text-context {
+    color: #333;
+}

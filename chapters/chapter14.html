@@ -23,10 +23,10 @@
             { q: "Pick a color", options: ["teal", "amber", "golden", "lavender"] },
             { q: "Pick a place", options: ["Ukhant Pueblo", "Lohan City", "Glorest Town", "Red Desert"] },
             { q: "Pick an animal", options: ["cat", "fox", "butterfly", "dog"] },
-            { q: "Pick an adjective", options: ["rusty", "mossy", "spikey", "ridged"] },
+            { q: "Pick an adjective", options: ["arcane", "bizarre", "spikey", "spectral"] },
             { q: "Pick a time length", options: ["unexpectedly", "slowly", "immediately", "suddenly"] },
             { q: "Pick a weird substance", options: ["slime", "goo", "mucus", "sap"] },
-            { q: "Pick a second weird substance", options: ["soot", "", "", ""] },
+            { q: "Pick a second weird substance", options: ["soot", "sludge", "mud", "seepage"] },
             { q: "Pick a name", options: ["Nar", "Kaji", "Jair", "Teo"] },
         ];
         
@@ -67,101 +67,99 @@
             choicesEl.innerHTML = "";
             
             const endings = [
-                `The ${answers[0]} light slows.The well speaks first to ${playerName || "someone"}.
-                It tells them the truth plainly: only one body can leave, but both souls are already claimed. 
-                The price is not death—it is replacement.
-                ${playerName || "someone"} understands before the words finish forming.
-                They let go.
-                The well releases ${answers[7]} at the edge of the ${answers[3]} stone, gasping, scraped, alive. 
-                The ${answers[1]} looks unchanged, untouched by what just happened.
-                When ${answers[7]} looks back, the well is quiet.Years later, locals swear the ${answers[3]} well still warns travelers—but now the voice sounds familiar. Gentle. Protective.
-                And it always asks the same thing:“Are you here alone?”`,
+                `The ${answers[0]} light slows down. 
+                The well speaks first to ${playerName || "someone"}.
+                It explains that both souls are already claimed. 
+                It is up to them to decide who stays and who goes.
+                The price is not death, rather encagement. 
+                Whomever is to stay, shall be the warden of the well.
+                Whoemever is to leave, shall keep quiet about what happened and never return to ${answers[1]}. 
+                The consequences of breaking the rules are unknown, but the well is patient.
+                ${playerName || "someone"} and ${answers[7]} stare at each other. 
+                They both want to leave, but they rather stay for the other.
+                Then, ${answers[4]}, ${answers[7]} makes a decision without notifying ${playerName || "someone"}.
+                Gusts of wind blow through the well, mist swirling around them making it impossible to see each other.
+                Then, ${playerName || "someone"} looks around, they're stand before the well, gasping, scraped, yet alive. 
+                ${answers[1]} looks unchanged, untouched by what just happened.
+                When ${playerName || "someone"} looks back, the well is quiet. 
+                ${playerName || "someone"} can’t see ${answers[7]} anywhere.`, 
 
-                `The well offers them a choice.
-                It tells ${answers[7]} they can leave—if they walk away. 
-                No heroics. 
-                No looking back. No reaching down.
-                The ${answers[0]} light brightens, impatient.
-                ${playerName || "someone"} screams for them not to listen.
-                But fear is louder than loyalty.
-                ${answers[7]} climbs out. 
-                The air snaps back into place. 
-                The ${answers[3]} weight vanishes instantly.
-                They don’t realize the cost until later.
-                Every reflection shows someone standing just behind them.
-                Every quiet moment hums with a voice that knows their thoughts.
-                The well kept its promise.It just didn’t say who escaped.`,
-
-                `The well hesitates.This has never happened before.
-                Instead of choosing, ${playerName || "someone"} and ${answers[7]} reach for each other at the same time—gripping wrists slick with ${answers[6]}, refusing to let go.
-                The well pulses violently. 
-                The ${answers[2]} reappears, circling the rim.
-                The truth is revealed:The well does not punish.
-                It preserves.
-                It binds them together and seals itself shut.
-                The ${answers[1]} gains a new landmark: a ${answers[3]} stone where the well once was. No light. No sound.
-                But sometimes, when two people walk past together, they swear they hear breathing beneath their feet—steady, synchronized, alive.`,
+                `${playerName || "someone"} and ${answers[7]} look at each other, both wanting to leave, but neither willing to abandon the other.
+                Instead of choosing, they reach for each other. 
+                ${playerName || "someone"} looks at ${answers[7]} and nods. 
+                After a quick prayer, ${playerName || "someone"} leaps over to ${answers[7]}'s tower, landing on the ${answers[5]} to cushion the fall.
+                The well hesitates.
+                This had never happened before.
+                Instead of choosing someone to stay, ${playerName || "someone"} and ${answers[7]} had both chosen to stay.
+                The well pulses violently, its rhythm breaking.  
+                The ${answers[2]} reappears, circling the rim, restless.
+                The well does not punish.  
+                It prevails from separation.
+                It needs fear. It needs distance. It needs someone to be left behind.
+                And for the first time, it has none of those.
+                The pull weakens. The light fractures.
+                Stone groans as the well collapses inward on itself, sealing shut and not by choice, but because it could no longer function.
+                ${playerName || "someone"} and ${answers[7]} had defeated the well, broken its curse.
+                After that, less people went missing, but the Legend of the Well remained.
+                But when two people walk past the well's location together, they swear they feel warmth beneath their feet—steady, synchronized, alive.`,
             ];
             
             const randomEnding = endings[Math.floor(Math.random() * endings.length)];
             
             storyEl.innerHTML = `
-                Best friends ${playerName || "someone"} and ${answers[7]} go on a trip to the ${answers[1]}, following a road that slowly loses its markings the farther they go. 
-                The locals speak of the place in lowered voices, always glancing toward the same direction when they do.
+                Best friends ${playerName || "someone"} and ${answers[7]} go on a trip to ${answers[1]}, following a road that slowly loses its markings the farther they go. 
+                They walk into a liquor store and ask for directions to the nearest hotel, but the clerk seems hesitant to help.
+                They notice the locals speak of the place in lowered voices, always glancing toward the same direction when they do.
                 They warn them about the ${answers[3]} well. 
                 They hear rumors about people who've found the well and never made it back. 
-                How those who go missing are not searched for very long because the chances of finding them are close to zero.
+                How not one of those missing cases has avoided becoming a cold case.
                 The warnings are vague and sound more like folklore rather than danger.
                 “Just stories,” one local says. “Old ones.”
-                ${playerName || "someone"} lingers on the words, doesn't like the idea.  
-                They notice how no one uses the word accident.
+                ${playerName || "someone"} lingers on the words, they don't like the sound of it which makes 'em uneasy.  
                 Later that night, ${playerName || "someone"} brings it up again, asking why no maps seem to mark the well’s location. 
                 ${answers[7]} laughs it off, calling it superstition meant to scare outsiders. 
                 They insist that if people vanished, there would be records. 
                 Proof. Something solid.
-                Still, ${answers[7]} keeps asking questions and convinces ${playerName || "someone"} to go in search for the well.
+                ${answers[7]} is really intrigued and pushes ${playerName || "someone"} to go in search for the well.
+                While hesistant, ${playerName || "someone"} agrees, noting they can't leave ${answers[7]} alone. 
                 They keep walking toward where the locals told them not to go.
-                As they venture deeper into the ${answers[1]}, the land grows quieter—not empty, but attentive. 
+                As they venture down the depths of ${answers[1]}, the land grows quieter—not empty, but attentive. 
                 Sounds carry strangely. 
                 Footsteps echo when they shouldn’t. 
-                At one point, ${playerName || "someone"} swears they hear breathing that doesn’t belong to either of them.
+                At one point, ${playerName || "someone"} swears they hear breathing that doesn’t belong to either one of them.
                 That’s when they stumble upon the ${answers[3]} well. 
 
                 It’s covered in ${answers[6]} and ${answers[5]}, clinging to the stone like something organic that learned how to pretend it wasn’t alive. 
-                The rim is smooth, worn down in a way that suggests hands—many hands—resting there for a long time.
-                It looks like it hasn’t been used in years.
-                It looks like it’s been waiting.
+                The rim is smooth, worn down in a way that suggests it had been there for a long time.
+                The well appeared like it hadn’t been used in years.
+                It looked like it had been waiting.
                 ${playerName || "someone"} notices the air turn ${answers[3]}. 
                 Their ears pop. Their chest feels tight, like the space around them is shrinking.
                 Despite the warnings, ${answers[7]} is drawn closer. 
-                Each step feels deliberate, even when they try to stop themselves. 
-                They kneel and peer inside.
+                He steps closer hovering over the well's massive opening to have a little peak. 
                 Within the well, a ${answers[0]} vein-like light pulses along the walls, slow and rhythmic, like a heartbeat. 
-                A strange ${answers[2]} perches on the edge, watching—not startled, not curious. 
-                Expectant. The well pulses again.
-                ${playerName || "someone"} grabs ${answers[7]}, trying to pull them back, but their body won’t respond. 
-                Their eyes don’t blink. The light intensifies.
-                ${answers[4]}.
+                A strange ${answers[2]} perches on the edge, watching, not startled, not curious. 
+                ${answers[4]}, the well pulses again.
+                ${playerName || "someone"} grabs ${answers[7]}, trying to pull them back, but it's too late. Their bodies won’t respond. 
+                They can't move a finger. Their eyes don’t blink. The light intensifies.  
 
-                They don’t fall.
-                The sensation is more like being unmade—stretched thin, rearranged, pressed through something too narrow for thought. 
+                They don’t fall...
+                The sensation is more like being unmade, stretched thin, rearranged, pressed through something too narrow for thought. 
                 Sound disappears first. Then weight. Then time.
                 When awareness returns, they are no longer together.
-                ${answers[7]} wakes to darkness broken only by that same ${answers[0]} light, now threading through the stone like veins beneath skin. 
-                The walls breathe. The well is deeper than it looked, folding in on itself, space behaving incorrectly.
-                Every step forward shows them something they remember wrong.
-                Above, ${playerName || "someone"} is half-conscious at the rim of the well, fingers gripping stone slick with ${answers[6]}. The ${answers[2]} is gone. 
+                ${answers[7]} wakes to darkness broken only by that same ${answers[0]} pulsing light, its beat faster, threading through the stone like veins beneath skin. 
+                The walls breathe. The well is deeper than it looked, folding in on itself, defying the laws of physics. 
+                The stone walls are covered slick with ${answers[6]}, making it repulsive.
+                He notices he's on a tower, rising from what seems like an endless void.
+                Above, ${playerName || "someone"} is half-conscious on a separate tower. 
+                ${answers[7]} looks up, the ${answers[2]} is gone. 
                 In its place is silence that presses harder than noise ever could.
-                The well speaks—not aloud, but inward.
-                It tells them the same truth in different ways.
+                The well begins to rumble. They hear a voice, not from some third-party. 
+                It's like the well is speaking to them within their own thoughts. 
+                It tells them the Truth about its existence and the terms are as follow: 
                 One of them was always meant to stay.
                 One of them was always meant to leave.
                 And the well is patient enough to decide which is which.
-
-
-                In a ${answers[0]} world, ${playerName || "someone"} found themselves in ${answers[1]}. 
-                They encountered a ${answers[2]} that seemed to embody the ${answers[3]} vibe of the place. 
-                As the ${answers[2]} led them through the surroundings, they experienced a moment of clarity during the ${answers[4]}.
             ${randomEnding}
             `;
         }
