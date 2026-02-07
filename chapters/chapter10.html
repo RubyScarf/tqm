@@ -3,175 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drop 10</title>
+    <title>Drop 16</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../assets/book.png"> 
     <link rel="stylesheet" href="../chapters/chapters.css">
-    <link rel="stylesheet" href="../chapters/chapterscss/chapter10.css">
+    <link rel="stylesheet" href="../chapters/chapterscss/chapter16.css">
 </head>
 <body>
-    <h1 class="note-title">Heart Pod #10</h1>
+    <h1 class="note-title">Heart Pod #16</h1>
 
-    <div class="questions">
-    <div id="screen1" class="screen active">
-        <h2>Valentine Vault</h2>
-        <p>10 locks stand between you and the reward…</p>
-        <button onclick="nextScreen(2)">Start</button>
-    </div>
-    
-    <div id="screen2" class="screen">
-        <h2>Lock 1</h2>
-        <p>How do I like to spend my free time?</p>
-        <p class="lock1">besides spending it w/ you</p>
-            <button onclick="wrong()">Studying</button> 
-            <button onclick="wrong()">Working</button>
-            <button onclick="wrong()">Sleeping</button>
-            <button onclick="correct(3)">Minecraft</button> 
-            <button onclick="wrong()">Roblos</button>
-        <p class="small" id="msg2"></p>
-    </div>
-    
-    <div id="screen3" class="screen">
-        <h2>Lock 2</h2>
-        <p>What's my middle name?</p>
-        <p class="lock1">so fricken ez, like w song, too.</p>
-            <button onclick="wrong()">B. Anthony</button>
-            <button onclick="correct(4)">Gabriela</button>
-            <button onclick="wrong()">Gary</button> 
-            <button onclick="wrong()">Veronica</button>
-            <button onclick="wrong()">Ruby</button>
-        <p class="small" id="msg3"></p>
-    </div>
-   
-    <div id="screen4" class="screen">
-        <h2>Lock 3</h2>
-        <p>What's my height?</p>
-        <p class="lock1">unfortunately im not 8'7?</p>
-            <button onclick="wrong()">5'0</button> 
-            <button onclick="wrong()">5'2</button>
-            <button onclick="wrong()">5'4</button>
-            <button onclick="correct(5)">5'5</button>
-            <button onclick="wrong()">5'7</button>
-        <p class="small" id="msg4"></p>
-    </div>
-   
-    <div id="screen5" class="screen">
-        <h2>Lock 4</h2>
-        <p>What's my favorite sport to play?</p>
-        <p class="lock1">i actually like all of these btw</p>
-            <button onclick="wrong()">Flag Football</button> 
-            <button onclick="correct(6)">Soccer</button>
-            <button onclick="wrong()">Tennis</button>
-            <button onclick="wrong()">Kickball</button>
-            <button onclick="wrong()">Baseball</button>
-            <button onclick="wrong()">Street Hockey</button>
-        <p class="small" id="msg4"></p>
-    </div>
+    <h2 class="note-subtitle">My goals</h2>
 
-    <div id="screen6" class="screen">
-        <h2>Lock 5</h2>
-        <p>My favorite Minecraft Game?</p>
-        <p class="lock1">ill teach you someday</p>
-            <button onclick="wrong()">Housing Parkour</button> 
-            <button onclick="correct(7)">BEDWARS</button>
-            <button onclick="wrong()">Survival</button>
-            <button onclick="wrong()">Skyblock</button>
-            <button onclick="wrong()">Speedrunning</button>
-            <button onclick="wrong()">Creative</button>
-        <p class="small" id="msg4"></p>
+    <div class="future-container">
+        <div class="future" onclick="reveal(this, 0)">🌅</div>
+        <div class="future" onclick="reveal(this, 1)">🌟</div>
+        <div class="future" onclick="reveal(this, 2)">💌</div>
+        <div class="future" onclick="reveal(this, 3)">🎞️</div>
+        <div class="future" onclick="reveal(this, 4)">😎</div>
+        <div class="future" onclick="reveal(this, 5)">❤️</div>
     </div>
+      
+    <div id="messageBox" class="message hidden"></div>
 
-    <div id="screen7" class="screen">
-        <h2>Lock 6</h2>
-        <p>What song is us...</p>
-        <p class="lock1">i sent you this song early on for a reason :P</p>
-            <button onclick="wrong()">That one song from Tiktok</button> 
-            <button onclick="wrong()">Touch</button>
-            <button onclick="wrong()">Oki Doki</button>
-            <button onclick="wrong()">The intro song to that one shoe</button>
-            <button onclick="correct(8)">Contigo</button>
-            <button onclick="wrong()">Polaroid Love</button>
-        <p class="small" id="msg4"></p>
-    </div>
-
-    <div id="screen8" class="screen">
-        <h2>Lock 7</h2>
-        <p>Snow Activity</p>
-        <p class="lock1">snow is awesome</p>
-            <button onclick="correct(9)">Snowball Fighting</button> 
-            <button onclick="correct(9)">Skiing</button>
-            <button onclick="correct(9)">Ice Skating</button>
-            <button onclick="correct(9)">Reindeer Riding</button>
-            <button onclick="correct(9)">Sleighing</button>
-            <button onclick="correct(9)">Snowboarding</button>
-        <p class="small" id="msg4"></p>
-    </div>
-
-    <div id="screen9" class="screen">
-        <h2>Lock 8</h2>
-        <p>What color do I associate with you?</p>
-        <p class="lock1">¿is it that obvious?</p>
-            <button onclick="wrong()">Red</button> 
-            <button onclick="wrong()">Orange</button>
-            <button onclick="wrong()">Yellow</button>
-            <button onclick="wrong()">Green</button>
-            <button onclick="correct(10)">Blue</button>
-            <button onclick="wrong()">Porp</button> 
-        <p class="small" id="msg4"></p>
-    </div>
-
-    <div id="screen10" class="screen">
-        <h2>Lock 9</h2>
-        <p>Pick a number… trust the process...</p>
-        <p class="lock1">¿what could it possibly be?</p>
-            <button onclick="wrong()">0</button> 
-            <button onclick="wrong()">1</button>
-            <button onclick="wrong()">3</button>
-            <button onclick="wrong()">5</button>
-            <button onclick="wrong()">7</button>
-            <button onclick="correct(11)">9</button>
-        <p class="small" id="msg4"></p>
-    </div>
-
-    <div id="screen11" class="screen">
-        <h2>Lock 10</h2>
-        <p>Who is the BOSTEST?</p>
-        <p class="lock1">👀</p>
-            <button onclick="correct(12)">Yuri</button> 
-            <button onclick="wrong()">Suwan</button> 
-        <p class="small" id="msg2"></p>
-    </div>
-
-    <div id="screen12" class="screen">
-        <h2>🎉 Vault Opened!</h2>
-        <h3>Reward unlocked: </p>
-        <h3>You are officially <em><strong>SWAG</strong></em> 😎.</h3>
-        <p class="small">This message is legally binding, btw.</p>
-    </div>
-    </div>
-    
-    <script>
-        function nextScreen(n) {
-            document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-            document.getElementById("screen" + n).classList.add("active");
-        }
-   
-    function correct(next) {
-        nextScreen(next);
-    }
-   
-    function wrong() {
-        const msgs = [
-            "Nope, try again",
-            "That didn’t work…",
-            "The vault says no",
-            "Almost… but not quite"
-        ];
-        const current = document.querySelector(".screen.active .small");
-        current.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-    }
-    </script>
-   
     <a class="back-btn" href="../index.html">Back to the Hearts ❤️</a>
+
+    <script>
+        const messages = [
+            "Days where everything feels quiet inside. No pressure. Just peace.",
+            "Choosing each other, during good, during bad, during change, during obstacles.",
+            "Unexpected good news that change your whole week for the better!",
+            "Memories you’ll laugh about months later and still smile to.",
+            "Days where you feel like you’re exactly where you’re supposed to be.",
+            "Moments when you realize you’re loved more than you thought.",
+        ];
+
+        function reveal(element, index) {
+            const box = document.getElementById("messageBox");
+            box.textContent = messages[index];
+            box.classList.remove("hidden");
+            element.style.opacity = "0.4";
+            element.style.pointerEvents = "none";
+        }
+    </script>
 </body>
 </html>

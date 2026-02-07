@@ -1,68 +1,52 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #1a1f3a, #0b0f1f);
-    color: white;
-    text-align: center;
-    overflow: hidden;
-}
-
-.title {
-    margin-top: 60px;
-    font-size: 2.5em;
-    letter-spacing: 2px;
-}
-
-.subtitle {
-    opacity: 0.7;
-    margin-bottom: 40px;
-}
-
-.future-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.future {
-    font-size: 3rem;
-    width: 90px;
-    height: 90px;
+    font-family: Arial, sans-serif;
+    background-image: url('../../assets/bluebg.png'); 
     display: flex;
     align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .questions {
     justify-content: center;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    transition: 0.3s ease;
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
-}
-
-.future:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 25px rgba(255,255,255,0.5);
-}
-
-.message {
-    margin-top: 50px;
-    font-size: 1.4rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    animation: fadeIn 1s ease forwards;
-}
-
-.hidden {
+  }
+  .screen {
     display: none;
-}
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    color: #4e5880;
+  }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+  .screen.active { display: block; }
+
+  h2 { margin-bottom: 10px; }
+
+  button {
+    margin: 8px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #7385cc;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  button:hover {
+    background: #242b36;
+  }
+
+  .small {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #666;
+  }
+  .lock1 {
+    font-size: 11px;
+    color: #aaa;
+  }
