@@ -5,11 +5,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
-
-  .questions {
     justify-content: center;
   }
+
   .screen {
     display: none;
     background: rgba(255, 255, 255, 0.9);
