@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6b81ff, #c4edfa, #4e5880); 
+    background: linear-gradient(135deg, #4e5880 #6b81ff, #4e5880); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
-    background: #4e5880;
+    background: #7385cc;
     color: white;
     cursor: pointer;
     font-size: 14px;
