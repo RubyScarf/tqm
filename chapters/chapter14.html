@@ -61,6 +61,11 @@
                 revealStory();
             }
         }
+
+        function highlight(word) {
+           return `<span class="highlight">${word}</span>`;
+        }
+
         
         function revealStory() {
             questionEl.textContent = "✨ You made a story";
