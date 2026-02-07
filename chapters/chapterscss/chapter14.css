@@ -61,11 +61,3 @@ button:hover {
     right: 10px;
     background: #6c5ce7;
 }
-
-.highlight {
-    color: #ff69b4;   /* bright pink, change as you like */
-    font-weight: bold;
-    background-color: rgba(255, 255, 0, 0.2); /* subtle highlight effect */
-    padding: 2px 4px;
-    border-radius: 4px;
-}
