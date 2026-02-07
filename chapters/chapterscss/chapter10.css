@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4e5880 #6b81ff, #4e5880); 
+    background-image: url('/assets/bluebg.png'); 
     display: flex;
     justify-content: center;
     align-items: center;
