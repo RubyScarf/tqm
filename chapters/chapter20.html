@@ -9,77 +9,76 @@
     <link rel="stylesheet" href="../chapters/chapters.css">
     <style>
         body {
-  margin: 0;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: sans-serif;
-}
+        margin: 0;
+        background: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif;
+        }
 
-.carousel {
-  position: relative;
-  width: 800px;
-  height: 500px;
-  overflow: hidden;
-  border-radius: 12px;
-}
+        .carousel {
+        position: relative;
+        width: 800px;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 12px;
+        }
 
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-}
+        .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+        }
 
-.slide.active {
-  opacity: 1;
-}
+        .slide.active {
+        opacity: 1;
+        }
 
-.btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 30px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-}
+        .btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        font-size: 30px;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 50%;
+        }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+        .prev { left: 10px; }
+        .next { right: 10px; }
 
-.btn:hover {
-  background: rgba(0,0,0,0.8);
-}
+        .btn:hover {
+        background: rgba(0,0,0,0.8);
+        }
 
-.dots {
-  position: absolute;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
-}
+        .dots {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+        }
 
-.dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  display: inline-block;
-  background: rgba(255,255,255,0.5);
-  border-radius: 50%;
-  cursor: pointer;
-}
+        .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 5px;
+        display: inline-block;
+        background: rgba(255,255,255,0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        }
 
-.dot.active {
-  background: white;
-}
-
+        .dot.active {
+        background: white;
+        }
     </style>
 </head>
 <body>
@@ -128,73 +127,73 @@
     
     <script>
         const slides = document.querySelectorAll(".slide");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-const dotsContainer = document.querySelector(".dots");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const dotsContainer = document.querySelector(".dots");
 
-let currentIndex = 0;
-let interval = 5000; // 5 seconds
-let autoSlide;
+        let currentIndex = 0;
+        let interval = 5000; // 5 seconds
+        let autoSlide;
 
-// Create dots dynamically
-slides.forEach((_, index) => {
-  const dot = document.createElement("span");
-  dot.classList.add("dot");
-  if (index === 0) dot.classList.add("active");
+        // Create dots dynamically
+        slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
 
-  dot.addEventListener("click", () => {
-    goToSlide(index);
-    resetAutoSlide();
-  });
+        dot.addEventListener("click", () => {
+            goToSlide(index);
+            resetAutoSlide();
+        });
 
-  dotsContainer.appendChild(dot);
-});
+        dotsContainer.appendChild(dot);
+        });
 
-const dots = document.querySelectorAll(".dot");
+        const dots = document.querySelectorAll(".dot");
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("active"));
-  dots.forEach(dot => dot.classList.remove("active"));
+        function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        dots.forEach(dot => dot.classList.remove("active"));
 
-  slides[index].classList.add("active");
-  dots[index].classList.add("active");
-}
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+        }
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}
+        function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+        }
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-}
+        function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+        }
 
-function goToSlide(index) {
-  currentIndex = index;
-  showSlide(currentIndex);
-}
+        function goToSlide(index) {
+        currentIndex = index;
+        showSlide(currentIndex);
+        }
 
-function startAutoSlide() {
-  autoSlide = setInterval(nextSlide, interval);
-}
+        function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, interval);
+        }
 
-function resetAutoSlide() {
-  clearInterval(autoSlide);
-  startAutoSlide();
-}
+        function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+        }
 
-nextBtn.addEventListener("click", () => {
-  nextSlide();
-  resetAutoSlide();
-});
+        nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetAutoSlide();
+        });
 
-prevBtn.addEventListener("click", () => {
-  prevSlide();
-  resetAutoSlide();
-});
+        prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetAutoSlide();
+        });
 
-startAutoSlide();
+        startAutoSlide();
 
     </script>
     <script>
