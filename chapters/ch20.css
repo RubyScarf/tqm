@@ -2,7 +2,7 @@
     position: relative;
     width: 90%;
     max-width: 800px;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 10; 
     margin: 40px auto;
     overflow: hidden;
     border-radius: 12px;
