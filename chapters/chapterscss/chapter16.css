@@ -8,6 +8,23 @@ body {
     justify-content: center;
   }
 
+
+
+
+.screen {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+
+
+
   .screen {
     display: none;
     background: rgba(255, 255, 255, 0.9);
