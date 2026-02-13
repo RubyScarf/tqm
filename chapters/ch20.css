@@ -75,3 +75,26 @@
 .dot.active {
     background: white;
 }
+
+.note-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ff77cc;
+}
+
+body {
+  background: linear-gradient(to bottom, #0b0c2b, #1d1e3b);
+  color: #ffe0f0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.note-content {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+  flex: 1;
+}
