@@ -98,3 +98,7 @@ body {
   max-width: 800px;
   flex: 1;
 }
+
+body {
+margin: 20px;
+}
