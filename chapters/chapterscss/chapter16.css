@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     background-image: url('../../assets/bluebg.png'); 
     display: flex;
+flex-direction: column;   /* ADD THIS */
     align-items: center;
     height: 100vh;
     margin: 0;
