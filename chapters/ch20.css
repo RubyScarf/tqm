@@ -87,6 +87,8 @@ body {
   color: #ffe0f0;
   font-family: 'Arial', sans-serif;
   text-align: center;
+margin: 0;
+padding: 20px;
 }
 
 .note-content {
@@ -97,8 +99,4 @@ body {
   margin: 5% auto;
   max-width: 800px;
   flex: 1;
-}
-
-body {
-margin: 20px;
 }
